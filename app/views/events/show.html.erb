@@ -1,0 +1,9 @@
+<p>Nom de l'event : <%= @event.title %></p>
+<p>Description de l'event : <%= @event.description %></p>
+<p>Le nombre d'inscrits est de <%= @event.title %></p>
+<p>Date de fin de l'event :<%= @event.start_date + @event.duration %></p>
+<p>Date de début de l'event :<%= @event.start_date %></p>
+<p>Lieu de l'event : <%= @event.location %></p>
+<p>Tarot de l'event : <%= @event.price %>€</p>
+
+<%= button_to "Payer l'event", checkout_create_path(total: @event.price ), class: "btn btn-primary", data: { turbo: false } %>

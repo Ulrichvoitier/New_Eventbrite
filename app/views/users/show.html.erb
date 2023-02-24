@@ -1,0 +1,46 @@
+<body>
+     <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Voici tous les events rejoints amig@ !</h1>
+          <p>Youhou ! </p>
+          <p>Tip top ! </p>
+          <p>Appréciez le design du site ! </p>
+        </div>
+     </div>
+
+     <h2><%= current_user.first_name %></h2>
+     <h2><%= current_user.last_name %></h2>
+     <h2><%= current_user.description %></h2>
+     <h2><%= current_user.email %></h2>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <% @user_events.each do |user_events| %>
+              <div class="col-md-4">
+                <h2><%= user_events.title %></h2>
+                <p><%= user_events.description %> </p>
+                <p><a class="btn btn-secondary" href="/events/<%= user_events.id %>" role="button">Carte de l'event &raquo;</a></p>
+                <%= button_to "Payer l'event", checkout_create_path(total: user_events.price ), class: "btn btn-primary", data: { turbo: false } %>
+              </div>
+            <% end%>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Copyright 2023</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+</body>

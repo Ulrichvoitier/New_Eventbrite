@@ -1,0 +1,40 @@
+<body>
+     <div class="jumbotron">
+        <div class="container text-center">
+          <h1 class="display-3 ce">Bienvenue sur mon incroyable site !</h1>
+          <p>Retrouvez ici tous vos événements prefs ! </p>
+          <p>Puissiez-vous trouver votre bonheur ; des événements pêche party, de la TEUF TEUF, des conférences diverses et variées, des tranches de rigolade </p>
+          <p>Viendez et bookez votre event ! </p>
+          <p><a class="btn btn-primary btn-lg" href="/events/new" role="button">Clique ici pour créer ton event</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <% @all_events.each do |event| %>
+              <div class="col-md-4">
+                <h2><%= event.title %></h2>
+                <p><%= event.description %> </p>
+                <p><a class="btn btn-secondary" href="/events/<%= event.id %>" role="button">Détails de l'event &raquo;</a></p>
+              </div>
+            <% end%>
+        </div>
+        <hr>
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Copyright 2023</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+</body>
+
